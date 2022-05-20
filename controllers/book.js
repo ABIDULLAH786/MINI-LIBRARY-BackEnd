@@ -12,7 +12,6 @@ module.exports.getBooks = async (req, res) => {
         res.status(500).json("something went wrong")
     }
 }
-
 exports.findBookById = async (req, res, next) => {
     try {
         const bookDetail = await knex('books').where('id', req.params.id).select("*");
